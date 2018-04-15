@@ -10,7 +10,7 @@ import UIKit
 private let contentCellID = "contentCellID"
 class PageContentView: UIView {
     private var childVcs : [UIViewController]
-    private var parentViewController : UIViewController
+    private weak var parentViewController : UIViewController?
     private  lazy var collectionView : UICollectionView = {
         let layout  = UICollectionViewFlowLayout()
         layout.itemSize = self.bounds.size
@@ -40,7 +40,7 @@ class PageContentView: UIView {
 extension PageContentView{
     private func setupUI(){
         for childVc in childVcs{
-            parentViewController.addChildViewController(childVc)
+            parentViewController?.addChildViewController(childVc)
         }
         addSubview(collectionView)
         collectionView.frame = bounds
