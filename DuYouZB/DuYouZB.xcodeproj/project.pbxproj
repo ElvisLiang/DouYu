@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		146557A6208376A400DBC1D2 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146557A5208376A400DBC1D2 /* PageContentView.swift */; };
+		146557A820837C7C00DBC1D2 /* UIColor-Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146557A720837C7C00DBC1D2 /* UIColor-Extention.swift */; };
 		14682755207F8DB1007B16A9 /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14682754207F8DB1007B16A9 /* PageTitleView.swift */; };
 		14682759207F8EA2007B16A9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14682758207F8EA2007B16A9 /* HomeViewController.swift */; };
 		1468275B207F8F79007B16A9 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1468275A207F8F79007B16A9 /* Common.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		146557A5208376A400DBC1D2 /* PageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PageContentView.swift; path = DuYouZB/PageContentView.swift; sourceTree = "<group>"; };
+		146557A720837C7C00DBC1D2 /* UIColor-Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIColor-Extention.swift"; path = "DuYouZB/Classes/Tools/Extension/UIColor-Extention.swift"; sourceTree = "<group>"; };
 		14682754207F8DB1007B16A9 /* PageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PageTitleView.swift; path = DuYouZB/PageTitleView.swift; sourceTree = "<group>"; };
 		14682758207F8EA2007B16A9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = DuYouZB/Classes/Home/Controller/HomeViewController.swift; sourceTree = "<group>"; };
 		1468275A207F8F79007B16A9 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Common.swift; path = DuYouZB/Classes/Tools/Common.swift; sourceTree = "<group>"; };
@@ -91,8 +95,10 @@
 		14966D3D207E408C00E62293 = {
 			isa = PBXGroup;
 			children = (
+				146557A720837C7C00DBC1D2 /* UIColor-Extention.swift */,
 				14DAC6D2207F9E32002A424F /* UIBarButtonItem-Extension.swift */,
 				1468275A207F8F79007B16A9 /* Common.swift */,
+				146557A5208376A400DBC1D2 /* PageContentView.swift */,
 				14682754207F8DB1007B16A9 /* PageTitleView.swift */,
 				14682758207F8EA2007B16A9 /* HomeViewController.swift */,
 				14966D87207E5B6F00E62293 /* Profile.storyboard */,
@@ -285,8 +291,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1468275B207F8F79007B16A9 /* Common.swift in Sources */,
+				146557A6208376A400DBC1D2 /* PageContentView.swift in Sources */,
 				14682755207F8DB1007B16A9 /* PageTitleView.swift in Sources */,
 				14DAC6D3207F9E32002A424F /* UIBarButtonItem-Extension.swift in Sources */,
+				146557A820837C7C00DBC1D2 /* UIColor-Extention.swift in Sources */,
 				14966D4A207E408C00E62293 /* AppDelegate.swift in Sources */,
 				14682759207F8EA2007B16A9 /* HomeViewController.swift in Sources */,
 			);
