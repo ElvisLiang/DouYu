@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol PageTitleViewDelegate : class {
+    func pageTiltleView(titleView:PageTitleView,selectedIndex : Int)
+}
+
 class PageTitleView: UIView {
     private var titles : [String]
     private var currentIndex : Int = 0
     private var titlesLabel : [UILabel] = [UILabel]()
+     var delegate :PageTitleViewDelegate?
     private lazy var scrollView : UIScrollView = {
        let scrollView = UIScrollView()
         scrollView.showsHorizontalScrollIndicator = false
@@ -52,7 +57,7 @@ extension PageTitleView{
         }
         addSubview(bottomLine)
         scrollView.addSubview(scrollLine)
-        scrollLine.frame = CGRect(x:firstLabel.frame.origin.x,y:CGFloat(34),width:firstLabel.frame.width,height:CGFloat(2))
+        scrollLine.frame = CGRect(x:firstLabel.frame.origin.x,y:CGFloat(32),width:firstLabel.frame.width,height:CGFloat(2))
         firstLabel.textColor = UIColor.orange
     }
     
@@ -90,5 +95,11 @@ extension PageTitleView{
         UIView.animate(withDuration: 0.15){
             self.scrollLine.frame.origin.x = scrollLineX
         }
+        delegate?.pageTiltleView(titleView: self,selectedIndex: currentLabel.tag)
+    }
+}
+extension PageTitleView{
+    func setTitleWithProgress(progress : CGFloat,sourceIndex : Int,targetIndex : Int){
+        
     }
 }
