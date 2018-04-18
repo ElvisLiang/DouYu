@@ -11,7 +11,8 @@ import UIKit
 protocol PageTitleViewDelegate : class {
     func pageTiltleView(titleView:PageTitleView,selectedIndex : Int)
 }
-
+private let KNormalColor : (CGFloat,CGFloat,CGFloat) = (85,85,85)
+private let KSelectColor : (CGFloat,CGFloat,CGFloat) = (255,128,0)
 class PageTitleView: UIView {
     private var titles : [String]
     private var currentIndex : Int = 0
@@ -100,6 +101,14 @@ extension PageTitleView{
 }
 extension PageTitleView{
     func setTitleWithProgress(progress : CGFloat,sourceIndex : Int,targetIndex : Int){
-        
+        let sourceLabel = titlesLabel[sourceIndex]
+        let targetLabel = titlesLabel[targetIndex]
+        let moveTotalX = targetLabel.frame.origin.x - sourceLabel.frame.origin.x
+        let moveX = moveTotalX * progress
+        scrollLine.frame.origin.x = moveX+sourceLabel.frame.origin.x
+         let colorDelta = (KSelectColor.0 - KNormalColor.0,KSelectColor.1 - KNormalColor.1,KSelectColor.2 - KNormalColor.2)
+        sourceLabel.textColor = UIColor(r:KSelectColor.0-colorDelta.0,g:KSelectColor.1-colorDelta.1,b:KSelectColor.2-colorDelta.2)
+        targetLabel.textColor = UIColor(r:KNormalColor.0+colorDelta.0,g:KNormalColor.1+colorDelta.1,b:KNormalColor.2+colorDelta.2)
+        currentIndex = targetIndex
     }
 }

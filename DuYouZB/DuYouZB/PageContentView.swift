@@ -16,6 +16,7 @@ class PageContentView: UIView {
     private var childVcs : [UIViewController]
     private weak var parentViewController : UIViewController?
     private var startOffsetX:CGFloat = 0
+    var isForbigScrollDelefate : Bool = false
     weak var delegate : PageContentViewDelegate?
     private  lazy var collectionView : UICollectionView = {
         let layout  = UICollectionViewFlowLayout()
@@ -70,6 +71,7 @@ extension PageContentView : UICollectionViewDataSource{
 }
 extension PageContentView{
     func setCurrentIndex(currentIndex:Int){
+        isForbigScrollDelefate = true
         let offsetX = CGFloat(CGFloat(currentIndex)*collectionView.frame.width)
         collectionView.setContentOffset(CGPoint(x:offsetX,y:0), animated:true)
     }
@@ -77,8 +79,12 @@ extension PageContentView{
 extension PageContentView : UICollectionViewDelegate{
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         startOffsetX = scrollView.contentOffset.x
+        isForbigScrollDelefate = false
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if isForbigScrollDelefate{
+            return
+        }
         var progress : CGFloat = 0
         var sourceIndex : Int = 0
         var targetIndex : Int = 0
